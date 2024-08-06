@@ -1,0 +1,25 @@
+<app-header />
+@if(isAddingBook) {
+<app-new-book (close)="onCloseAddBook($event)" [bookId]="bookId" />
+}
+<menu>
+  <button (click)="onStartAddBook()">Add New Book</button>
+</menu>
+<main>
+  <ul id="books">
+    @for (book of books; track $index) {
+    <app-books
+      [book]="book"
+      (select)="onSelectBook($event)"
+      [selected]="book.id === selectedBookId"
+    />
+    }
+  </ul>
+
+  @if(selectedBook) {
+
+  <app-book [title]="selectedBook.title" [bookId]="selectedBook.id" />
+  } @else {
+  <p id="fallback">Select a book to see details!</p>
+  }
+</main>

@@ -1,0 +1,6 @@
+<app-card>
+  <button [class.active]="selected" (click)="onSelectBook()">
+    <span>{{ book.title }}</span>
+    <span style="font-style: italic">~{{ book.author }}</span>
+  </button>
+</app-card>

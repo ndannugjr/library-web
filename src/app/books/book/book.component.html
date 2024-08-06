@@ -1,0 +1,12 @@
+<section id="book">
+  <header>
+    <h2>{{ title }}</h2>
+  </header>
+  <ul>
+    @for(book of [selectedBook]; track book.id) {
+    <li>
+      <app-book-details [book]="book" />
+    </li>
+    }
+  </ul>
+</section>

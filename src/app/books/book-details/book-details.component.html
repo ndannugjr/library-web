@@ -1,0 +1,8 @@
+<app-card>
+  <article>
+    <span>{{ book.summary }} </span>
+
+    <h3>{{ book.author }}</h3>
+    <time>({{ book.publishedDate | date : "mediumDate" }})</time>
+  </article>
+</app-card>
